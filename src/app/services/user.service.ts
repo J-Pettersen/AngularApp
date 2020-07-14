@@ -18,7 +18,7 @@ export class UserService {
   }
 
   //given a user's id, get that users details.
-  getUser(id:number): Observable<User>{
+  getUser(id:number): Observable<User>{    
     return this.http.get<User>(`${this.url}${id}`);
   }
 }
