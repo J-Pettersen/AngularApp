@@ -12,7 +12,8 @@ import { User } from '../../models/user';
 export class UserDetailsComponent implements OnInit {
 
   public userId: number;
-  public user: User; 
+  public user: User;
+  public showPosts: boolean = false; 
   constructor(private _userService: UserService,private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -33,5 +34,9 @@ export class UserDetailsComponent implements OnInit {
   goToUsers() {
     let selectedId = this.userId ? this.userId : null; 
     this.router.navigate(['../', { id: selectedId }], { relativeTo: this.route });
+  }
+
+  togglePosts(){
+    this.showPosts = !this.showPosts;
   }
 }

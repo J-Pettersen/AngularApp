@@ -16,3 +16,10 @@
 <div>
     <button (click)="goToUsers()">Back</button>
 </div>
+
+<div>
+    <button (click)="togglePosts()">Show Posts</button>
+    <div>
+        <app-user-posts [showPosts]="showPosts" [userId]="userId"></app-user-posts>
+    </div>
+</div>
