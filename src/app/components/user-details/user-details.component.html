@@ -1,25 +1,24 @@
 <h2>User Details</h2>
-<div *ngIf="user">
-    <table> 
-        <td>
-            <tr>Name</tr>
-            <tr>Username</tr>
-            <tr>Email Address</tr>
-        </td>
-        <td>
-            <tr>: {{ user.name }}</tr>
-            <tr>: {{ user.username }}</tr>
-            <tr>: {{ user.email }}</tr>
-        </td>
-    </table>
+<div class="items">
+    <div *ngIf="user">
+        <table class="detailsTable"> 
+            <tr>
+                <th> Name</th>
+                <td>: {{ user.name }}</td>
+            </tr>
+            <tr>
+                <th> Username</th>
+                <td>: {{ user.username }}</td>
+            </tr>
+            <tr>
+                <th> Email Address</th>
+                <td>: {{ user.email }}</td>
+            </tr>
+        </table>
+    </div>
 </div>
-<div>
-    <button (click)="goToUsers()">Back</button>
-</div>
-
 <div>
     <button (click)="togglePosts()">Show Posts</button>
-    <div>
-        <app-user-posts [showPosts]="showPosts" [userId]="userId"></app-user-posts>
-    </div>
+    <button (click)="goToUsers()">Back</button>        
+    <app-user-posts [showPosts]="showPosts" [userId]="userId"></app-user-posts>
 </div>
